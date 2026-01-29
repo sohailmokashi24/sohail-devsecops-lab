@@ -45,3 +45,16 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+
+  docker-build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    needs: sast
+
+    steps:
+      - name: Checkout repository
+       uses: actions/checkout@v4
+
+     - name: Build Docker image
+       run: |
+         docker build -t devsecops-lab:latest app
