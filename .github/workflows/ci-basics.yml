@@ -47,9 +47,9 @@ jobs:
 
 
   docker-build:
-    name: Build Docker Image
-    runs-on: ubuntu-latest
-    needs: sast
+    -name: Build Docker Image
+     runs-on: ubuntu-latest
+     needs: sast
 
     steps:
       - name: Checkout repository
