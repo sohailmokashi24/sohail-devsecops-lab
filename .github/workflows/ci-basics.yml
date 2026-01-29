@@ -28,7 +28,7 @@ jobs:
     runs-on: ubu
     steps:
       - name: Checkout repository
-        ses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Run SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
